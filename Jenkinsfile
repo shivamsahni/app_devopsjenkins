@@ -17,7 +17,7 @@ pipeline{
     stage('git checkout'){
       steps{
         echo "git checkout"
-        git branch: 'master', url: 'https://github.com/shivamsahni/app_devopsjenkins'
+        git branch: 'feature', url: 'https://github.com/shivamsahni/app_devopsjenkins'
       }
     }
     stage('nuget restore'){
