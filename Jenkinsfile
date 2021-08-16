@@ -44,7 +44,7 @@ pipeline{
     stage('Run UnitTests'){
       steps{
         echo "run unittests"
-        bat "dotnet test -l:trx; LogFileName: SampleDotnetWebAppTestResults.xml"
+        bat "dotnet test SampleDotnetWebappTests\\SampleDotnetWebAppTests.csproj -l:trx;LogFileName: SampleDotnetWebAppTestResults.xml"
       }
     }
     stage('Stop sonarqube'){
