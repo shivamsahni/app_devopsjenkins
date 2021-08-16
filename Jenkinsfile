@@ -41,12 +41,12 @@ pipeline{
         bat "dotnet build"
       }
     }
-    stage('Run UnitTests'){
+    /*stage('Run UnitTests'){
       steps{
         echo "run unittests"
-        bat "dotnet test SampleDotnetWebappTests\\SampleDotnetWebAppTests.csproj -l:trx;LogFileName: SampleDotnetWebAppTestResults.xml"
+        bat "dotnet test SampleDotnetWebAppTests\\SampleDotnetWebAppTests.csproj -l:trx;LogFileName: SampleDotnetWebAppTestResults.xml"
       }
-    }
+    }*/
     stage('Stop sonarqube'){
       steps{
         echo 'Stop sonarqube'
@@ -75,11 +75,11 @@ pipeline{
     }
 
   }
-  post{
+  /*post{
     always{
       echo 'test report generation'
       xunit([MSTest(deleteOutputFiles: true, failIfNotNew: true, pattern: "SampleDotnetWebAppTest\\TestResults\\SampleDotnetWebAppTestResults.xml, skipNoTestFile: true, stopProcessingIfError: true")])
     }
-  }
+  }*/
 
 }
