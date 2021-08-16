@@ -78,7 +78,7 @@ pipeline{
   post{
     always{
       echo 'test report generation'
-      xunit([MSTest](deleteOutputFiles: true, failIfNotNew: true, pattern: "SampleDotnetWebAppTest\\TestResults\\SampleDotnetWebAppTestResults.xml, skipNoTestFile: true, stopProcessingIfError: true")])
+      xunit([MSTest(deleteOutputFiles: true, failIfNotNew: true, pattern: "SampleDotnetWebAppTest\\TestResults\\SampleDotnetWebAppTestResults.xml, skipNoTestFile: true, stopProcessingIfError: true")])
     }
   }
 
